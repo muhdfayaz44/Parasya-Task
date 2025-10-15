@@ -45,7 +45,7 @@
   width: 100%;
   height: 180px;
   object-fit: contain;
-  background-color: chocolate;
+  background-color:darkkhaki;
 }
 
 .card-body {
@@ -54,6 +54,7 @@
 
 .card-body h3 {
   font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 8px;
 }
 
@@ -64,7 +65,22 @@
 }
 
 .card-body .desc {
+  font-family: cursive;
   font-size: 0.9rem;
   color: darkslategrey;
 }
 
+/* error message */
+.error {
+  color: white;
+  background: crimson;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* loading message */
+.loading {
+  color: gray;
+  font-style: italic;
+}
