@@ -6,6 +6,9 @@ function ProductCard({ product }) {
                 <h3>{product.name}</h3>
                 <p className="price">${product.price}</p>
                 <p className="desc">{product.description}</p>
+                <div className="cart">
+                     <button className="btn">Add to Cart</button>
+                </div>
             </div>
         </div>
     )

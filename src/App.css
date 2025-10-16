@@ -1,6 +1,5 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  background-color: gray;
   padding: 2rem;
   text-align: center;
 }
@@ -35,6 +34,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -44,30 +44,34 @@
 .card-image {
   width: 100%;
   height: 180px;
-  object-fit: contain;
-  background-color:darkkhaki;
+  object-fit:contain;
+  background-image: linear-gradient(to bottom, darkBlue, lightBlue);
 }
 
 .card-body {
   padding: 15px;
+  background-image: linear-gradient(to top, black, gray);
 }
 
 .card-body h3 {
+  color: white;
   font-size: 1.1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Playwrite DE SAS", cursive;
   margin-bottom: 8px;
 }
 
 .card-body .price {
+  display: flex;
+  justify-content: right;
   font-weight: bold;
-  color: red;
+  color: white;
   margin-bottom: 8px;
 }
 
 .card-body .desc {
   font-family: cursive;
   font-size: 0.9rem;
-  color: darkslategrey;
+  color: white;
 }
 
 /* error message */
@@ -83,4 +87,27 @@
 .loading {
   color: gray;
   font-style: italic;
+}
+
+.card-body .cart {
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.card-body .cart .btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card-body .cart .btn:hover {
+  transform: translateY(-5px);
+  background-color: greenyellow;
+  color: black;
 }
