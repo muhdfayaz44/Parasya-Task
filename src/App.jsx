@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import ProductCard from './ProductCard'
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"; 
 
 function App() {
 
@@ -27,10 +29,22 @@ function App() {
     })
   },[])
    
+const handleAddtoCart = (product) => {
+  toast.success(`${product.name} added to cart!`, {
+    position: "bottom-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    theme: "colored",
+  })
+}
+
 
   return (
     <div className ="App">
-      <h2>Product Details</h2>
+      <h1 className='heading'>Product Details</h1>
 
       {loading && <p>Loading Products...</p>}
       {error && <p className='error'>Error: {error}</p>}
@@ -39,10 +53,15 @@ function App() {
       {!loading && !error && (
         <div className='grid'>
           {products.map((item) => (
-            <ProductCard key={item.product_id} product={item}></ProductCard>
+            <ProductCard
+              key={item.product_id} 
+              product={item}
+              handleAddtoCart={handleAddtoCart}
+            />
           ))}
         </div>
       )}
+      <ToastContainer/>
     </div>
   )
 }

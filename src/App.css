@@ -1,5 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: gray; 
+}
+
+.heading {
+  font-family: 'Dancing Script', sans-serif;
+}
+
 #root {
-  background-color: gray;
   padding: 2rem;
   text-align: center;
 }
@@ -27,6 +37,7 @@
 }
 
 .card {
+  height: 100%;
   background: white;
   border-radius: 20px;
   box-shadow: 0 2px 8px black;
@@ -44,12 +55,14 @@
 .card-image {
   width: 100%;
   height: 180px;
-  object-fit:contain;
+  display: block;
   background-image: linear-gradient(to bottom, darkBlue, lightBlue);
 }
 
 .card-body {
-  padding: 15px;
+  flex-grow: 1;
+  padding-bottom: 10px;
+  padding-right: 10px;
   background-image: linear-gradient(to top, black, gray);
 }
 
@@ -97,6 +110,7 @@
 }
 
 .card-body .cart .btn {
+  border-radius: 20px;
   background-color: black;
   color: white;
   border: none;
