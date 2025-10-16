@@ -1,16 +1,31 @@
-# React + Vite
+# Product Cards data fetch from backend API and display using frontend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React project that displays product cards with images, descriptions, prices, add to cart functionality, react toaster message display and a responsive grid layout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive grid layout for mobile, tablet, and desktop.
+- Card hover effects with smooth transitions.
+- Product details display with custom fonts.
+- Loading and error states.
+- "Add to Cart" button with hover effects.
+- React toastify message on click of "Add to Cart".
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- CSS (Flexbox & Grid)
+- Google Fonts (`Dancing Script` & `Playwrite DE SAS`)
+- Fetch API for products (mock API)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repo:
+
+```bash
+git clone <https://github.com/muhdfayaz44/Parasya-Task>
+
+npm install
+
+npm run dev
+
