@@ -25,7 +25,18 @@ A simple React project that displays product cards with images, descriptions, pr
 ```bash
 git clone <https://github.com/muhdfayaz44/Parasya-Task>
 
-npm install
+```
+2. npm install
 
+```bash
 npm run dev
+
+```
+
+3. Run Deployment Server
+
+```bash
+npm run dev
+
+
 
