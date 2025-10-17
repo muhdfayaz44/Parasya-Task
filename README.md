@@ -10,13 +10,16 @@ A simple React project that displays product cards with images, descriptions, pr
 - Loading and error states.
 - "Add to Cart" button with hover effects.
 - React toastify message on click of "Add to Cart".
+- On Click of each product card, new details page is loaded.
+- Edit option to alter the product details
 
 ## Tech Stack
 
 - React
 - CSS (Flexbox & Grid)
-- Google Fonts (`Dancing Script` & `Playwrite DE SAS`)
+- Google Fonts (`Poppins`)
 - Fetch API for products (mock API)
+- React localStorage
 
 ## Setup
 
