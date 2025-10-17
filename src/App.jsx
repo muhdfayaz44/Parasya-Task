@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import ProductCard from './ProductCard'
 import ProductDetails from './ProductDetails';
+import EditProduct from './EditProduct';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,15 +14,22 @@ function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+
+    const saved = JSON.parse(localStorage.getItem("products"));
+
+
+    if (saved && saved.length > 0) {
+      setProducts(saved);
+      setLoading(false);
+    } else {
      fetch("https://fake-store-api.mock.beeceptor.com/api/products")
     .then((res) => {
-      if(!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
+      if(!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
       return res.json()
     })
     .then((data) => {
       setProducts(data) // data is stored in state
+      localStorage.setItem("products", JSON.stringify(data));
       setLoading(false);
     })
     .catch((err) => {
@@ -29,6 +37,7 @@ function App() {
       setError("Failed to load product data. Please try again later.")
       setLoading(false);
     })
+  }
   },[])
    
 const handleAddtoCart = (product) => {
@@ -72,6 +81,7 @@ function HomePage() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product/:id/edit" element={<EditProduct />}/>
       </Routes>
     </Router>
   )
