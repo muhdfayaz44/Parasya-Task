@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import ProductCard from './ProductCard'
+import ProductDetails from './ProductDetails';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -41,29 +43,39 @@ const handleAddtoCart = (product) => {
   })
 }
 
+function HomePage() {
+    return (
+      <div className="App">
+        <h1 className='heading'>Product Details</h1>
+
+        {loading && <p>Loading Products...</p>}
+        {error && <p className='error'>Error: {error}</p>}
+
+        {!loading && !error && (
+          <div className='grid'>
+            {products.map((item) => (
+              <ProductCard
+                key={item.product_id}
+                product={item}
+                handleAddtoCart={handleAddtoCart}
+              />
+            ))}
+          </div>
+        )}
+        <ToastContainer />
+      </div>
+    )
+  }
 
   return (
-    <div className ="App">
-      <h1 className='heading'>Product Details</h1>
-
-      {loading && <p>Loading Products...</p>}
-      {error && <p className='error'>Error: {error}</p>}
-
-
-      {!loading && !error && (
-        <div className='grid'>
-          {products.map((item) => (
-            <ProductCard
-              key={item.product_id} 
-              product={item}
-              handleAddtoCart={handleAddtoCart}
-            />
-          ))}
-        </div>
-      )}
-      <ToastContainer/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+      </Routes>
+    </Router>
   )
+
 }
 
 export default App
