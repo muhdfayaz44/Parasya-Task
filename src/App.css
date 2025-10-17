@@ -7,6 +7,7 @@ html, body {
 
 .heading {
   font-family: 'Dancing Script', sans-serif;
+  color: white;
 }
 
 #root {
@@ -70,7 +71,7 @@ html, body {
 .card-body h3 {
   color: white;
   font-size: 1.1rem;
-  font-family: "Playwrite DE SAS", cursive;
+  font-family: "Poppins", cursive;
   margin-bottom: 8px;
 }
 
@@ -80,10 +81,11 @@ html, body {
   font-weight: bold;
   color: white;
   margin-bottom: 8px;
+  font-family: "Poppins",cursive;
 }
 
 .card-body .desc {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:"Poppins",cursive;
   font-size: 0.9rem;
   color: white;
 }
@@ -125,4 +127,9 @@ html, body {
   transform: translateY(-5px);
   background-color: greenyellow;
   color: black;
+}
+
+.details {
+  background-color: whitesmoke;
+  font-family: "Poppins",cursive;
 }
