@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EditProduct() {
     const { id } = useParams();
@@ -31,8 +32,16 @@ const handleSubmit = (e) => {
   );
 
   localStorage.setItem("products", JSON.stringify(updated));
-  alert("Product details updated successfully!");
-  navigate(`/product/${id}`);
+   toast.success("Product details updated successfully!", {
+    position: "bottom-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    theme: "colored",
+    });
+  navigate(`/product/${id}`)
 };
 
 if (loading) return <p>Loading...</p>;

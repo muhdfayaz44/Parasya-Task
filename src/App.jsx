@@ -83,6 +83,7 @@ function HomePage() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/product/:id/edit" element={<EditProduct />}/>
       </Routes>
+      <ToastContainer/>
     </Router>
   )
 
