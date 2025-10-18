@@ -2,20 +2,22 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #2e2e2e;
+  background-color: #eae1e1; 
+  font-family: "Poppins", sans-serif;
 }
 
 .heading {
-  font-family: 'Dancing Script', sans-serif;
-  color: white;
+  font-family: 'Dancing Script', cursive;
+  color: #00b3b3; 
+  text-shadow: 0 2px 6px rgba(0, 179, 179, 0.3);
 }
+
 
 #root {
   padding: 2rem;
   text-align: center;
 }
 
-/* default mobile size */
 .grid {
   display: grid;
   gap: 20px;
@@ -23,14 +25,14 @@ html, body {
   padding: 20px;
 }
 
-/* tablet size */
+/* Tablet */
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop size */
+/* Desktop */
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -39,58 +41,91 @@ html, body {
 
 .card {
   height: 100%;
-  background-color: #1c1c1c;
+  background: #3a3a3a; 
   color: #fff;
   border-radius: 20px;
-  box-shadow: 0 2px 8px black;
+  box-shadow: 0 4px 12px rgba(0, 179, 179, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 179, 179, 0.3);
 }
 
 .card-image {
   width: 100%;
   height: 250px;
-  display: block;
-  background-color: white;
+  object-fit: cover;
+  background-color: #2e2e2e;
 }
 
 .card-body {
   flex-grow: 1;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  background-color: #1c1c1c;
+  padding: 15px;
+  background-color: #3a3a3a;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card-body h3 {
-  color: white;
-  font-size: 1.1rem;
-  font-family: "Poppins", cursive;
-  margin-bottom: 8px;
+  color: #00b3b3;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .card-body .price {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   font-weight: bold;
-  color: white;
+  color: #00e6e6;
   margin-bottom: 8px;
-  font-family: "Poppins",cursive;
 }
 
 .card-body .desc {
-  font-family:"Poppins",cursive;
   font-size: 0.9rem;
-  color: white;
+  color: #ddd;
 }
 
-/* error message */
+.btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #00b3b3;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #00cccc;
+  box-shadow: 0 4px 10px rgba(0, 179, 179, 0.3);
+}
+
+.btn-secondary {
+  background-color: #4f4f4f;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5f5f5f;
+}
+
+.card .cart {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding: 10px;
+}
+
 .error {
   color: white;
   background: crimson;
@@ -99,69 +134,52 @@ html, body {
   display: inline-block;
 }
 
-/* loading message */
 .loading {
-  color: gray;
+  color: #00b3b3;
   font-style: italic;
 }
 
-.card .cart {
-  transition: transform 0.2s;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-
-.card .cart .btn {
-  border-radius: 20px;
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.card .cart .btn:hover {
-  transform: translateY(-5px);
-  background-color: greenyellow;
-  color: black;
-}
-
 .details {
-  background-color: whitesmoke;
-  font-family: "Poppins",cursive;
+  background-color: #f0f0f0;
+  color: #2e2e2e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 179, 179, 0.2);
 }
 
 .editPage {
   margin: 0 auto;
-  height: 50%;
+  height: auto;
   width: 50%;
-  background-color: whitesmoke;
-  font-family: "Poppins",cursive;
+  background-color: #f8f8f8;
   border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 179, 179, 0.3);
 }
 
-.editPage-name {
-  font-family: "Poppins", cursive;
-}
-.editPage-price {
-  font-family: "Poppins", cursive;
-}
-.editPage-brand {
-  font-family: "Poppins", cursive;
-}
-.editPage-category {
-  font-family: "Poppins", cursive;
-}
-.editPage-desc {
-  font-family: "Poppins", cursive;
-}
-.editPage-img {
-  font-family: "Poppins", cursive;
-}
-.editPage-submit {
-  font-family: "Poppins", cursive;
+.editPage input,
+.editPage textarea,
+.editPage select {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
+.editPage input:focus,
+.editPage textarea:focus,
+.editPage select:focus {
+  border-color: #00b3b3;
+  box-shadow: 0 0 5px rgba(0, 179, 179, 0.3);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}

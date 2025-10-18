@@ -71,7 +71,6 @@ function HomePage() {
             ))}
           </div>
         )}
-        <ToastContainer />
       </div>
     )
   }
@@ -79,11 +78,19 @@ function HomePage() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<HomePage products={products}/>} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/product/:id/edit" element={<EditProduct />}/>
       </Routes>
-      <ToastContainer/>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover={false}
+        draggable
+        theme="colored"
+      />
     </Router>
   )
 

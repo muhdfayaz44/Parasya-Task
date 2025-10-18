@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 
 function ProductDetails() {
     const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const{ id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setLoading(true);
@@ -80,6 +81,21 @@ function ProductDetails() {
                         }}
                 >EDIT</button>
             </Link>
+    
+            <button
+                onClick={() => navigate("/")}
+                style={{
+                    marginLeft: "10px",
+                    fontFamily: "Poppins",
+                    padding: "10px 20px",
+                    backgroundColor: "#007bff",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    marginTop: "1rem",
+                }}
+            >Back</button>
         </div>
     )
 }
